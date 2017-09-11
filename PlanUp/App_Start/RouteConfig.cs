@@ -23,6 +23,11 @@ namespace PlanUp
                 url: "{controller}/{action}/{id}",
                 defaults: new {controller = "Movie", action = "Index", id = UrlParameter.Optional}
             );
+            routes.MapRoute(
+                name: "Music",
+                url: "{controller}/{action}/{id}",
+                defaults: new {controller = "Music", action = "Index", id = UrlParameter.Optional}
+            );
             ;
         }
     }
