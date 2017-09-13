@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using PlanUp.Models;
 using TMDbLib.Client;
 using TMDbLib.Objects.Search;
+using DatabaseMovie = TMDbLib.Objects.Movies.Movie;
 
 namespace PlanUp.Controllers.Api
 {
@@ -18,9 +19,8 @@ namespace PlanUp.Controllers.Api
             ApiKey = apiKey;
         }
 
-        public static IEnumerable<SearchMovie> MovieList = Client.GetMovieTopRatedListAsync().Result.Results;
+        public static IEnumerable<SearchMovie> MovieList = Client.;
 
-        
         public void SetConnection()
         {
             Client = new TMDbClient(ApiKey);
