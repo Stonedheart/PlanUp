@@ -13,41 +13,6 @@ namespace PlanUp.Controllers
 {
     public class MovieController : Controller
     {
-        public static TMDbClient Client = new TMDbClient("e7a445aaa97ddc684c2404b990fb7087");
-        public static List<SearchMovie> MovieList = Client.GetMovieTopRatedListAsync().Result.Results;
-
-        // GET: Movie
-        public ActionResult Index()
-        {
-            var model = Converter();
-
-            return View(model);
-        }
-
-        internal static Movie[] Converter()
-        {
-            var movieArray = new Movie[3];
-            var random = new Random();
-
-
-            for (var i = 0; i < 3; i++)
-            {
-                var slotMovie = MovieList[random.Next(MovieList.Count)];
-                Movie movie;
-                try
-                {
-                    var release = (DateTime) slotMovie.ReleaseDate;
-                    movie = new Movie(slotMovie.Title, release.ToString("MMMM dd, yyyy"), slotMovie.PosterPath);
-                }
-                catch (InvalidOperationException e)
-                {
-                    Console.WriteLine(e.Message);
-                    movie = new Movie(slotMovie.Title, null, slotMovie.PosterPath);
-                }
-                movieArray[i] = movie;
-            }
-
-            return movieArray;
-        }
+       
     }
 }
