@@ -22,9 +22,6 @@ namespace PlanUp.Controllers
             if (GenerateRandom())
                 return RedirectToAction("Index", "Music");
             return RedirectToAction("Index", "Movie");
-            
-            
-            
         }
     }
 }
