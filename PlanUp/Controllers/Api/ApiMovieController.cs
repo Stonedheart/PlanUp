@@ -11,12 +11,11 @@ namespace PlanUp.Controllers.Api
     {
         internal string ApiKey;
         internal static TMDbClient Client;
-        internal Movie PickedMovie;
+        internal Movie Proposition;
 
-        public ApiMovieController(string apiKey, TMDbClient client)
+        public ApiMovieController(string apiKey="e7a445aaa97ddc684c2404b990fb7087")
         {
             ApiKey = apiKey;
-            Client = new TMDbClient("e7a445aaa97ddc684c2404b990fb7087");
         }
 
         public static IEnumerable<SearchMovie> MovieList = Client.GetMovieTopRatedListAsync().Result.Results;
@@ -24,12 +23,15 @@ namespace PlanUp.Controllers.Api
         
         public void SetConnection()
         {
+            Client = new TMDbClient(ApiKey);
         }
 
         public void Convert()
         {
             throw new System.NotImplementedException();
         }
+
+        public void SetProposition();
 
         public object GetPropostition()
         {
