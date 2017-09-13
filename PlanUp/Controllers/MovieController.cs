@@ -26,11 +26,11 @@ namespace PlanUp.Controllers
 
         internal static Movie[] Converter()
         {
-            Movie[] movieArray = new Movie[3];
+            var movieArray = new Movie[3];
             var random = new Random();
 
 
-            for (int i = 0; i < 3; i++)
+            for (var i = 0; i < 3; i++)
             {
                 var slotMovie = MovieList[random.Next(MovieList.Count)];
                 Movie movie;
