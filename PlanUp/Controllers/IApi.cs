@@ -5,5 +5,6 @@
         void SetConnection();
         void Convert();
         object GetPropostition();
+        // git comment
     }
 }
