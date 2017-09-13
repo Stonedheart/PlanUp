@@ -1,4 +1,4 @@
-﻿namespace PlanUp.Controllers
+﻿namespace PlanUp.Controllers.Api
 {
     public interface IApi
     {
