@@ -14,6 +14,7 @@ namespace PlanUp.Controllers.Api
     {
         internal string ApiKey {get;set;}
         internal TMDbClient Client;
+        internal DatabaseMovie TmdbMovie;
         internal Movie Proposition;
 
         public ApiMovieController(string apiKey="e7a445aaa97ddc684c2404b990fb7087")
@@ -47,12 +48,23 @@ namespace PlanUp.Controllers.Api
             return result;
         }
 
-        public void Convert()
+        public void SetDatabaseMovie()
         {
-            throw new System.NotImplementedException();
+            var movie = GetDatabaseMovie(GetRandomNumber());
+            TmdbMovie = movie;
         }
 
-//        public void SetProposition();
+        public Movie Convert(DatabaseMovie tmdbMovie)
+        {
+            var resultMovie = new Movie(tmdbMovie.Title, tmdbMovie.ReleaseDate.ToString(), tmdbMovie.PosterPath);
+
+            return resultMovie;
+        }
+
+        public void SetDefaultProposition()
+        {
+            Proposition = Convert(GetDatabaseMovie(GetRandomNumber()));
+        };
 
         public object GetPropostition()
         {
