@@ -1,8 +1,8 @@
 ﻿namespace PlanUp.Models
 {
-    internal class EventCategory
+    public class EventCategory
     {
-        private int Id { get; set; }
+        public int Id { get; set; }
         private string CategoryName { get; set; }
 
         public EventCategory(string categoryName)

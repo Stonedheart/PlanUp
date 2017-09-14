@@ -20,6 +20,8 @@ namespace PlanUp.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<HomeEvent> HomeEvents { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -29,5 +31,6 @@ namespace PlanUp.Models
         {
             return new ApplicationDbContext();
         }
+
     }
 }
