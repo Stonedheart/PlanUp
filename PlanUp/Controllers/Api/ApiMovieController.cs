@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Web.Mvc;
 using PlanUp.Models;
 using TMDbLib.Client;
@@ -31,6 +32,14 @@ namespace PlanUp.Controllers.Api
 
             return random.Next();
 
+        }
+
+        public DatabaseMovie GetDatabaseMovie(int? id)
+        {
+            var movieId = id ?? GetRandomNumber();
+            var result = Client.GetMovieAsync(movieId);
+
+            return result;
         }
 
         public void Convert()
