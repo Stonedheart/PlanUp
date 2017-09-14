@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using PlanUp.Models;
 using DatabaseMovie = TMDbLib.Objects.Movies.Movie;
 
@@ -14,6 +15,9 @@ namespace PlanUp.Converters
                     new Movie(movieToConvert.Title,
                         movieToConvert.ReleaseDate.ToString(),
                         movieToConvert.PosterPath, (int) movieToConvert.Runtime);
+
+                var director = movieToConvert.Credits.Crew.Where(i => i.Job.ToLower() == "director");
+                resultMovie.Director = director.ToString();
 
                 return resultMovie;
             }

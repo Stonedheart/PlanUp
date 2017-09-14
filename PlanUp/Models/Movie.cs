@@ -3,7 +3,7 @@
     public class Movie
     {
         public string Title { get; }
-        public string Director { get;}
+        public string Director { get; set; }
         public string Genre { get; }
         public string Year { get; }
         public string PosterPath { get; }
