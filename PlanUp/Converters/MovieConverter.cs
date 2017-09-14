@@ -19,12 +19,12 @@ namespace PlanUp.Converters
             _movieToConvert = movieToConvert;
         }
 
-        private Movie SetBaseMovie(DatabaseMovie movie)
+        private Movie SetBaseMovie()
         {
             var resultMovie =
-                new Movie(movie.Title,
-                    movie.ReleaseDate.ToString(),
-                    movie.PosterPath);
+                new Movie(_movieToConvert.Title,
+                    _movieToConvert.ReleaseDate.ToString(),
+                    _movieToConvert.PosterPath);
             return resultMovie;
         }
 
@@ -32,7 +32,6 @@ namespace PlanUp.Converters
         {
             if (_movieToConvert.Runtime != null)
             {
-
                 var director = _movieToConvert.Credits.Crew.Where(i => i.Job.ToLower() == "director");
                 movieToSet.Director = director.ToString();
                 movieToSet.Genre = _movieToConvert.Genres[0].Name;
@@ -42,6 +41,14 @@ namespace PlanUp.Converters
             {
                 throw new NullReferenceException("There's not runtime!");
             }
+        }
+
+        public Movie Convert()
+        {
+            var movie = SetBaseMovie();
+            SetAdditionalInfo(movie);
+
+            return movie;
         }
     }
 }
