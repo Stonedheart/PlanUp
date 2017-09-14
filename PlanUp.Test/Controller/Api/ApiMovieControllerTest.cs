@@ -5,7 +5,7 @@ using PlanUp.Controllers;
 namespace PlanUp.Test
 {
     [TestFixture]
-    public class Tests
+    public class ApiMovieControllerTests
     {
         [Test]
         public void TestIfArrayExist()

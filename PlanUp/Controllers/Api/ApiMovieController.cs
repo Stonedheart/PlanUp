@@ -20,16 +20,9 @@ namespace PlanUp.Controllers.Api
             SetConnection(apiKey);
         }
 
-        public static IEnumerable<SearchMovie> MovieList = Client.;
-
         public void  SetConnection(string newKey)
         {
             Client = new TMDbClient(newKey);
-        }
-
-        public void SetConnection()
-        {
-            throw new NotImplementedException();
         }
 
         public void Convert()
