@@ -15,7 +15,7 @@ namespace PlanUp.Controllers.Api
         internal string ApiKey {get;set;}
         internal TMDbClient Client;
         internal DatabaseMovie TmdbMovie;
-        internal Movie Proposition;
+        internal Movie Proposition { get; set; }
 
         public ApiMovieController(string apiKey="e7a445aaa97ddc684c2404b990fb7087")
         {
@@ -26,6 +26,17 @@ namespace PlanUp.Controllers.Api
         public void  SetConnection(string newKey)
         {
             Client = new TMDbClient(newKey);
+        }
+
+        public void Convert()
+        {
+            throw new NotImplementedException();
+        }
+
+        public object GetPropostition()
+        {
+            SetDefaultProposition();
+            return Proposition;
         }
 
         public int GetRandomNumber()
@@ -64,13 +75,8 @@ namespace PlanUp.Controllers.Api
         public void SetDefaultProposition()
         {
             Proposition = Convert(GetDatabaseMovie(GetRandomNumber()));
-        };
-
-        public object GetPropostition()
-        {
-            throw new System.NotImplementedException();
         }
-        
+
 
 //        internal static Movie[] Converter()
 //        {

@@ -6,7 +6,7 @@ namespace PlanUp.Controllers.Api
     {
         void  SetConnection(string newKey);
         void Convert();
-        object GetPropostition();
+        object GetNextPropostition();
         // git comment
     }
 }
