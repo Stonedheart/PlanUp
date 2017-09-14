@@ -10,20 +10,26 @@ namespace PlanUp.Controllers.Api
 {
     public class ApiMovieController : IApi
     {
-        internal string ApiKey;
+        internal string ApiKey {get;set;}
         internal static TMDbClient Client;
         internal Movie Proposition;
 
         public ApiMovieController(string apiKey="e7a445aaa97ddc684c2404b990fb7087")
         {
             ApiKey = apiKey;
+            SetConnection(apiKey);
         }
 
         public static IEnumerable<SearchMovie> MovieList = Client.;
 
+        public void  SetConnection(string newKey)
+        {
+            Client = new TMDbClient(newKey);
+        }
+
         public void SetConnection()
         {
-            Client = new TMDbClient(ApiKey);
+            throw new NotImplementedException();
         }
 
         public void Convert()

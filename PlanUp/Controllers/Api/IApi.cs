@@ -2,7 +2,7 @@
 {
     public interface IApi
     {
-        void SetConnection();
+        void  SetConnection(string newKey);
         void Convert();
         object GetPropostition();
         // git comment
