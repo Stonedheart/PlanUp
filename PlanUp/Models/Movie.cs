@@ -4,8 +4,8 @@
     {
         public string Title { get; }
         public string Director { get; set; }
-        public string Genre { get; }
-        public string Year { get; }
+        public string Genre { get; set; }
+        public string Year { get; set; }
         public string PosterPath { get; }
         public int Duration { get; }
 
