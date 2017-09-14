@@ -8,9 +8,9 @@ namespace PlanUp.Converters
     public class MovieConverter
     {
 
-        private Movie _movieToConvert;
+        private DatabaseMovie _movieToConvert;
 
-        public MovieConverter(Movie movieToConvert)
+        public MovieConverter(DatabaseMovie movieToConvert)
         {
             if (movieToConvert.Title == null)
             {
