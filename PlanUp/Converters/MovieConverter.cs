@@ -7,7 +7,6 @@ namespace PlanUp.Converters
 {
     public class MovieConverter
     {
-
         private DatabaseMovie _movieToConvert;
 
         public MovieConverter(DatabaseMovie movieToConvert)
@@ -16,7 +15,7 @@ namespace PlanUp.Converters
             {
                 throw new NullReferenceException("Movie to convert wasn't initialized properly.");
             }
-            
+
             _movieToConvert = movieToConvert;
         }
 
@@ -26,23 +25,18 @@ namespace PlanUp.Converters
                 new Movie(movie.Title,
                     movie.ReleaseDate.ToString(),
                     movie.PosterPath);
-
+            return resultMovie;
         }
-        public Movie Convert(DatabaseMovie movieToConvert)
+
+        private void SetAdditionalInfo(Movie movieToSet)
         {
-            if (movieToConvert.Runtime != null)
+            if (_movieToConvert.Runtime != null)
             {
-                var resultMovie =
-                    new Movie(movieToConvert.Title,
-                        movieToConvert.ReleaseDate.ToString(),
-                        movieToConvert.PosterPath, (int) movieToConvert.Runtime);
 
-                var director = movieToConvert.Credits.Crew.Where(i => i.Job.ToLower() == "director");
-                resultMovie.Director = director.ToString();
-                resultMovie.Genre = movieToConvert.Genres[0].Name;
-                resultMovie.Year = movieToConvert.ReleaseDate.ToString();
-
-                return resultMovie;
+                var director = _movieToConvert.Credits.Crew.Where(i => i.Job.ToLower() == "director");
+                movieToSet.Director = director.ToString();
+                movieToSet.Genre = _movieToConvert.Genres[0].Name;
+                movieToSet.Year = _movieToConvert.ReleaseDate.ToString();
             }
             else
             {
