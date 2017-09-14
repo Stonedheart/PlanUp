@@ -5,6 +5,7 @@ using System.Web.Configuration;
 using System.Web.Mvc;
 using PlanUp.Models;
 using TMDbLib.Client;
+using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Search;
 using DatabaseMovie = TMDbLib.Objects.Movies.Movie;
 
@@ -39,7 +40,7 @@ namespace PlanUp.Controllers.Api
             {
                 throw new InvalidOperationException("Id should not be greater than 99999!");
             }
-            var result = _client.GetMovieAsync(movieId).Result;
+            var result = _client.GetMovieAsync(movieId, MovieMethods.Credits).Result;
 
             return result;
         }
