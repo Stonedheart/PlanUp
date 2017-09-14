@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Web.Configuration;
 using System.Web.Mvc;
 using PlanUp.Models;
 using TMDbLib.Client;
@@ -37,7 +38,11 @@ namespace PlanUp.Controllers.Api
         public DatabaseMovie GetDatabaseMovie(int? id)
         {
             var movieId = id ?? GetRandomNumber();
-            var result = Client.GetMovieAsync(movieId);
+            if (id > 99999)
+            {
+                throw new InvalidOperationException("Id should not be greater than 99999!");
+            }
+            var result = Client.GetMovieAsync(movieId).Result;
 
             return result;
         }
