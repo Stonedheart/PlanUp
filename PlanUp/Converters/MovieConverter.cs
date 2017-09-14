@@ -20,6 +20,14 @@ namespace PlanUp.Converters
             _movieToConvert = movieToConvert;
         }
 
+        private Movie SetBaseMovie(DatabaseMovie movie)
+        {
+            var resultMovie =
+                new Movie(movie.Title,
+                    movie.ReleaseDate.ToString(),
+                    movie.PosterPath);
+
+        }
         public Movie Convert(DatabaseMovie movieToConvert)
         {
             if (movieToConvert.Runtime != null)

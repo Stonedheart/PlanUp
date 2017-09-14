@@ -7,15 +7,13 @@
         public string Genre { get; set; }
         public string Year { get; set; }
         public string PosterPath { get; }
-        public int Duration { get; }
+        public int Duration { get; set; }
 
-        public Movie(string title, string year, string posterPath, int duration)
+        public Movie(string title, string year, string posterPath)
         {
             Title = title;
             Year = year;
-            Duration = duration;
             PosterPath = "https://image.tmdb.org/t/p/w320" + posterPath;
         }
-
     }
 }
