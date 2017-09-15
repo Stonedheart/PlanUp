@@ -29,7 +29,7 @@ namespace PlanUp.Controllers.Api
         internal SearchMovie GetSearchedMovie()
         {
 
-            var result = Client.DiscoverMoviesAsync().WhereVoteAverageIsAtLeast(5.0).
+            var result = Client.DiscoverMoviesAsync().
                 IncludeAdultMovies().Query().Result.Results;
 
             return result[new Random().Next(result.Count)];
@@ -38,17 +38,14 @@ namespace PlanUp.Controllers.Api
         internal void SetDatabaseMovie()
         {
             int movieId = GetSearchedMovie().Id;
-            var movie = Client.GetMovieAsync(movieId, MovieMethods.Keywords | MovieMethods.Credits).Result;
+            var movie = Client.GetMovieAsync(movieId, MovieMethods.Credits ).Result;
             _tmdbMovie = movie;
         }
 
         internal DatabaseMovie GetNextMovie()
         {
-            _tmdbMovie = null;
-            while (_tmdbMovie == null)
-            {
-                SetDatabaseMovie();
-            } 
+
+            SetDatabaseMovie();
             return _tmdbMovie;
         }
         }

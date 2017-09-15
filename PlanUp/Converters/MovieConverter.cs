@@ -32,10 +32,15 @@ namespace PlanUp.Converters
         {
             if (_movieToConvert.Runtime != null)
             {
-                var director = _movieToConvert.Credits.Crew.SingleOrDefault(i => i.Job.ToLower() == "director");
-                movieToSet.Director = director.ToString();
-//                movieToSet.Genre = _movieToConvert.Genres[0].Name;
+                var singleOrDefault = _movieToConvert.Credits.Crew.Find(i => i.Job.ToLower() == "director");
+                if (singleOrDefault != null)
+                {
+                    var director = singleOrDefault.Name;
+                    movieToSet.Director = director;
+                }
+                movieToSet.Genre = _movieToConvert.Genres[0].Name;
                 movieToSet.Year = _movieToConvert.ReleaseDate.ToString();
+                movieToSet.Duration = _movieToConvert.Runtime.Value;
             }
             else
             {

@@ -10,12 +10,12 @@ namespace PlanUp.Test
     {
         private ApiMovieController _testController;
         
-//        [Test]
-//        public void TestIfConstructorSetsProperly()
-//        {
-//            _testController = new ApiMovieController();
-//            Assert.NotNull(_testController.Client.ApiKey);
-//        }
+        [Test]
+        public void TestIfConstructorSetsProperly()
+        {
+            _testController = new ApiMovieController();
+            Assert.NotNull(_testController.Client.ApiKey);
+        }
 
         [Test]
         [Repeat(5)]
@@ -24,6 +24,13 @@ namespace PlanUp.Test
             _testController = new ApiMovieController();
             Assert.NotNull(_testController.GetNextMovie().Title);
         }
-        
+
+        [Test]
+        public void TestIfControllerSetsRuntime()
+        {
+            _testController = new ApiMovieController();
+            var runtime = _testController.GetNextMovie().Runtime.Value;
+            Assert.True(runtime.Equals(0));
+        }
     }
 }
