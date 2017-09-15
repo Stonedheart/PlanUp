@@ -26,13 +26,6 @@ namespace PlanUp.Controllers.Api
             Client = new TMDbClient(newKey);
         }
 
-        private int GetRandomNumber()
-        {
-            var random = new Random();
-
-            return random.Next(0, 999999);
-        }
-
         internal SearchMovie GetSearchedMovie()
         {
 
