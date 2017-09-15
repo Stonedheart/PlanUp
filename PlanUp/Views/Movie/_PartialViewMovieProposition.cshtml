@@ -5,6 +5,7 @@
         @foreach (var item in Model)
         {
             <div class="col-sm-4">
+                \
                 <p><img src="@item.PosterPath" /></p>
                 <p>@Html.DisplayFor(modelItem => item.Title)</p>
                 <p>
@@ -23,7 +24,7 @@
                     <span>@Html.DisplayNameFor(model => model.Duration) </span>
                     <span>@Html.DisplayFor(modelItem => item.Duration)</span>
                 </p>
-            </div>
+                <button type="button" class="btn-primary">Choose</button>    
+            </div>            
         }
-    </div>
 </div>
