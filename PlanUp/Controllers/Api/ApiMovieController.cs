@@ -13,7 +13,7 @@ namespace PlanUp.Controllers.Api
 {
     public class ApiMovieController : IApi
     {
-        private TMDbClient _client;
+        private TMDbClient Client { get; set; }
         private DatabaseMovie _tmdbMovie;
 
         public ApiMovieController(string apiKey = "e7a445aaa97ddc684c2404b990fb7087")
@@ -23,14 +23,14 @@ namespace PlanUp.Controllers.Api
 
         public void SetConnection(string newKey)
         {
-            _client = new TMDbClient(newKey);
+            Client = new TMDbClient(newKey);
         }
 
         private int GetRandomNumber()
         {
-            var random = new Random(99999);
+            var random = new Random();
 
-            return random.Next();
+            return random.Next(1000, 99999);
         }
 
         internal DatabaseMovie GetDatabaseMovie(int? id)
@@ -40,7 +40,7 @@ namespace PlanUp.Controllers.Api
             {
                 throw new InvalidOperationException("Id should not be greater than 99999!");
             }
-            var result = _client.GetMovieAsync(movieId, MovieMethods.Credits).Result;
+            var result = Client.GetMovieAsync(movieId, MovieMethods.Credits).Result;
 
             return result;
         }

@@ -14,7 +14,7 @@ namespace PlanUp.Test
         public void TestIfConstructorSetsProperly()
         {
             _testController = new ApiMovieController();
-            Assert.NotNull(_testController.Client.ApiKey);
+            Assert.NotNull(_testController._c);
         }
 
 //        [Test]
