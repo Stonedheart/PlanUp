@@ -10,19 +10,20 @@ namespace PlanUp.Test
     {
         private ApiMovieController _testController;
         
+//        [Test]
+//        public void TestIfConstructorSetsProperly()
+//        {
+//            _testController = new ApiMovieController();
+//            Assert.NotNull(_testController.Client.ApiKey);
+//        }
+
         [Test]
-        public void TestIfConstructorSetsProperly()
+        [Repeat(5)]
+        public void TestIfControllerSpitsOutMovie()
         {
             _testController = new ApiMovieController();
-            Assert.NotNull(_testController._c);
+            Assert.NotNull(_testController.GetNextMovie().Title);
         }
-
-//        [Test]
-//        public void TestIfThirdMovieIsInArray()
-//        {
-//            var movieArray = MovieController.Converter();
-//            Assert.AreNotEqual(movieArray[2].Title, null);
-//        }
         
     }
 }
