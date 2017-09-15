@@ -10,21 +10,31 @@ namespace PlanUp.Controllers
     public class HomeActivityController : Controller
     {
 
-        private static bool GenerateRandom()
+        private static int GenerateRandom()
         {
             var random = new Random();
-            var ans = random.Next(0, 2);
-            return ans == 0;
+            var ans = random.Next(0, 3);
+            return ans;
         }
             // GET: HomeActivity
             public ActionResult Index()
-        {
-            if (GenerateRandom())
-                return RedirectToAction("Index", "Music");
-            return RedirectToAction("Index", "Movie");
-            
-            
-            
-        }
-    }
+            {
+            var opt = GenerateRandom();
+                if (opt == 0)
+                {
+                    return RedirectToAction("Index", "Music");
+                }
+                if (opt == 1)
+
+                    return RedirectToAction("Index", "Movie");
+
+                if (opt == 2)
+                
+                    return RedirectToAction("Index", "HomeEvents");
+
+                return null;
+
+
+            }
+       }
 }
