@@ -44,7 +44,8 @@ namespace PlanUp.Controllers.Api
 
         internal void SetDatabaseMovie()
         {
-            var movie = GetDatabaseMovie(GetRandomNumber());
+            int movieId = GetSearchedMovie().Id;
+            var movie = Client.GetMovieAsync(movieId, MovieMethods.Keywords | MovieMethods.Credits).Result;
             _tmdbMovie = movie;
         }
 
