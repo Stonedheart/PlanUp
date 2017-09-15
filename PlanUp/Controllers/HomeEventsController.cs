@@ -15,7 +15,6 @@ namespace PlanUp.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: HomeEvents
         public ActionResult Index()
         {
             var rand = new Random();
