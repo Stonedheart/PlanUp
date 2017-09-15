@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanUp", "PlanUp\PlanUp.csproj", "{57B469B3-F441-47E1-BDAB-19F17D8BE4C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanUp.Tests", "PlanUp.Tests\PlanUp.Tests.csproj", "{105D5CBA-8AEC-45BF-9525-D6F4104F4461}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanUp.Test", "PlanUp.Test\PlanUp.Test.csproj", "{579855E8-FC4A-4B13-9E4D-E7C86AA2B09C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{57B469B3-F441-47E1-BDAB-19F17D8BE4C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57B469B3-F441-47E1-BDAB-19F17D8BE4C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57B469B3-F441-47E1-BDAB-19F17D8BE4C8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{105D5CBA-8AEC-45BF-9525-D6F4104F4461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{105D5CBA-8AEC-45BF-9525-D6F4104F4461}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{105D5CBA-8AEC-45BF-9525-D6F4104F4461}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{105D5CBA-8AEC-45BF-9525-D6F4104F4461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{579855E8-FC4A-4B13-9E4D-E7C86AA2B09C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{579855E8-FC4A-4B13-9E4D-E7C86AA2B09C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{579855E8-FC4A-4B13-9E4D-E7C86AA2B09C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{579855E8-FC4A-4B13-9E4D-E7C86AA2B09C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
