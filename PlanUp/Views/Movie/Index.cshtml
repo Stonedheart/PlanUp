@@ -1,58 +1,21 @@
 ﻿@using System.Web.Mvc.Html
+@using System.Web
+
 @model IEnumerable<PlanUp.Models.Movie>
 
 @{
     ViewBag.Title = "Pick a movie!";
 }
-
-<h1>@ViewBag.Title</h1>
-
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Director)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Genre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Year)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PosterPath)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Duration)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Director)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Genre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Year)
-        </td>
-        <td>
-            <img src="@item.PosterPath" />
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Duration)
-        </td>
-
-    </tr>
+                      
+@{
+    try
+    {
+        Html.RenderPartial("_PartialViewMovieProposition", Model);
+    } catch (Exception e)
+    {
+        <p>Source is unavailable</p>
+    }
 }
 
-</table>
-<td>@Html.ActionLink("Next Movies", "Index")</td>
+
+<p>@Html.ActionLink("Next Movies", "Index")</p>
