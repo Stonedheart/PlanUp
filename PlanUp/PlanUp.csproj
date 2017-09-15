@@ -233,6 +233,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeActivityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomeEventsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\MusicController.cs" />
@@ -246,6 +247,10 @@
     <Compile Include="Migrations\201709141258067_add homeEvents table.cs" />
     <Compile Include="Migrations\201709141258067_add homeEvents table.Designer.cs">
       <DependentUpon>201709141258067_add homeEvents table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709150904080_new m.cs" />
+    <Compile Include="Migrations\201709150904080_new m.Designer.cs">
+      <DependentUpon>201709150904080_new m.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -319,6 +324,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Movie\Index.cshtml" />
+    <Content Include="Views\HomeEvents\Create.cshtml" />
+    <Content Include="Views\HomeEvents\Delete.cshtml" />
+    <Content Include="Views\HomeEvents\Details.cshtml" />
+    <Content Include="Views\HomeEvents\Edit.cshtml" />
+    <Content Include="Views\HomeEvents\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -344,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709141258067_add homeEvents table.resx">
       <DependentUpon>201709141258067_add homeEvents table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709150904080_new m.resx">
+      <DependentUpon>201709150904080_new m.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
