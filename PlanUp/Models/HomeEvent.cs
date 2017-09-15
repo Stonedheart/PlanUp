@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PlanUp.Models
 {
-    public class HomeEvent
+    public class HomeEvent 
     {
         public int Id { get; set; }
         public string HomeEventName { get; set; }
