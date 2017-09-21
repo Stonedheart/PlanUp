@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PlanUp.Models
 {
-    public class MusicModel
+    public class MusicModel : HomeActivityProposition
     {
 //        public List<string> Videos { get; set; }
 //        public List<string> Channels { get; set; }

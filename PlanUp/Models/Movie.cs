@@ -1,6 +1,6 @@
 ﻿namespace PlanUp.Models
 {
-    public class Movie
+    public class Movie : HomeActivityProposition
     {
         public string Title { get; }
         public string Director { get;}
