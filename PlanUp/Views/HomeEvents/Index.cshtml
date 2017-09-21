@@ -1,34 +1,8 @@
-﻿@model IEnumerable<PlanUp.Models.HomeEvent>
+﻿@model System.Linq.IQueryable<PlanUp.Models.HomeEvent>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "title";
+    Layout = "_Layout";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.HomeEventName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Duration)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.HomeEventName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Duration)
-        </td>
-    </tr>
-}
-
-</table>
+<h2>title</h2>
