@@ -1,0 +1,27 @@
+﻿@using System.Web.Mvc.Html
+@using System.Web
+@using System
+
+@model IEnumerable<PlanUp.Models.HomeActivityProposition>
+
+@{
+    ViewBag.Title = "Make a pick!";
+}
+
+@{
+    var firstItemType = Model.First().GetType();
+
+    if (firstItemType == typeof(PlanUp.Models.Movie))
+    {
+        Html.RenderPartial("_PartialViewMovieProposition", Model);
+    }
+
+    if (firstItemType == typeof(PlanUp.Models.MusicModel))
+    {
+        Html.RenderPartial("_PartialViewMusicProposition", Model);
+    }
+}
+    
+
+
+<p>@Html.ActionLink("Next Movies", "Index")</p>
