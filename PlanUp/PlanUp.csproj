@@ -261,7 +261,6 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EventCategory.cs" />
-    <Compile Include="Models\HomeActivityPropositionController.cs" />
     <Compile Include="Models\HomeEvent.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -311,6 +310,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Views\HomeEvents\Index.cshtml" />
     <Content Include="Views\Music\Index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -346,13 +346,13 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Movie\Index.cshtml" />    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Views\Movie\Index.cshtml" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Movie\_PartialViewMovieProposition.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\HomeActivityProposition\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
