@@ -13,7 +13,7 @@ namespace PlanUp.Controllers
         private static int GenerateRandom()
         {
             var random = new Random();
-            var ans = random.Next(0, 3);
+            var ans = random.Next(0, 2);
             return ans;
         }
             // GET: HomeActivity
