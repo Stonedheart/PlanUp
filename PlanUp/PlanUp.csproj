@@ -428,6 +428,7 @@
       <DependentUpon>201709150904080_new m.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AbstractHomeEvent.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EventCategory.cs" />
     <Compile Include="Models\HomeEvent.cs" />

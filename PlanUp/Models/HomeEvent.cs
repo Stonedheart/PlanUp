@@ -5,6 +5,7 @@ using System.Web;
 
 namespace PlanUp.Models
 {
+//    class created for database, DO NOT TOUCH, DO NOT REFER!
     public class HomeEvent 
     {
         public int Id { get; set; }
