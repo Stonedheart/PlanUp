@@ -20,17 +20,15 @@ namespace PlanUp.Controllers
             public ActionResult Index()
             {
             var opt = GenerateRandom();
-                if (opt == 0)
+                switch (opt)
                 {
-                    return RedirectToAction("Index", "Music");
+                    case 0:
+                        return RedirectToAction("Index", "Music");
+                    case 1:
+                        return RedirectToAction("Index", "Movie");
+                    case 2:
+                        return RedirectToAction("Index", "HomeEvents");
                 }
-                if (opt == 1)
-
-                    return RedirectToAction("Index", "Movie");
-
-                if (opt == 2)
-                
-                    return RedirectToAction("Index", "HomeEvents");
 
                 return null;
 
