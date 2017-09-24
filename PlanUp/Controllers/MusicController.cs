@@ -40,8 +40,6 @@ namespace PlanUp.Controllers
                 msc = new MusicSetupController(query);
                 var task = msc.RunAsync();
                 var result = await task;
-                
-
                 return View(result);
             }
             catch (AggregateException ex)

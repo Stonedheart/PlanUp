@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using System.Linq;
@@ -11,12 +11,14 @@ namespace PlanUp.Models
         public string Title { get; set; }
         public string PlayListId { get; set; }
         public string Etag { get; set; }
+        public string Description { get; set; }
 
-        public Song(string title, string playListId, string etag)
+        public Song(string title, string playListId, string description)
         {
             Title = title;
             PlayListId = playListId;
             Etag = GetEtag(playListId);
+            Description = description;
         }
 
       
