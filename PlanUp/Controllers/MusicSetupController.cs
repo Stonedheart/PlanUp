@@ -18,9 +18,8 @@ namespace PlanUp.Controllers
         public MusicSetupController(string genre="")
         {
             if (genre == "")
-                genre = ChooseGenre();
+                genre = ChooseRandomGenre();
             _genre = genre;
-
         }
 
         private YouTubeService _youtubeService { get; set; }
@@ -36,13 +35,6 @@ namespace PlanUp.Controllers
             });
         }
 
-        
-
-        public object GetPropostition()
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<Song[]> RunAsync()
         {
             SetConnection();
@@ -54,8 +46,7 @@ namespace PlanUp.Controllers
             return musicConverter.Convert(searchListResponse);
         }
 
-
-        private static string ChooseGenre()
+        private static string ChooseRandomGenre()
         {
             var MusicGenres = MusicViewModel.GetGenreList();
             Random rnd = new Random();

@@ -26,3 +26,23 @@
         }
     }
 </table>
+
+<input type="button" value="Get Next Propositions"
+       onclick="GeneratePropositionInput()"/>
+<div id="genrePreferenceForm" style="display: inline;">
+    <a href="/Music/Index">
+        <button type="button" class="btn btn-success btn-sm">Surprise me</button>
+    </a>
+    
+    <form action="/Music/Index" style="display: inline;" >
+        <input type="text" name="genre" />
+        <input type="Submit" value="Next"/>
+    </form>
+</div>
+
+<script>
+    document.getElementById("genrePreferenceForm").style.display = "none";
+    function GeneratePropositionInput() {
+        document.getElementById("genrePreferenceForm").style.display = "block";
+    }
+</script>

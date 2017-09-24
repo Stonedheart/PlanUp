@@ -20,18 +20,7 @@ namespace PlanUp.Controllers
     public class MusicController : Controller
     {
         private MusicSetupController msc;
-
-        public MusicController()
-        {
-            
-        }
-
-        //private string getQuery()
-        //{
-        //    return Request["genre"];
-        //}
-        
-        // GET: Music
+       
         public async Task<ActionResult> Index()
         {
             try
