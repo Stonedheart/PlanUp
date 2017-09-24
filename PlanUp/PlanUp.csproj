@@ -243,31 +243,28 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\MusicController.cs" />
+    <Compile Include="Controllers\MusicSetupController.cs" />
+    <Compile Include="Converters\MusicConverter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709141229247_InitialMigrations.cs" />
-    <Compile Include="Migrations\201709141229247_InitialMigrations.Designer.cs">
-      <DependentUpon>201709141229247_InitialMigrations.cs</DependentUpon>
+    <Compile Include="Migrations\201709231821283_InitialModel.cs" />
+    <Compile Include="Migrations\201709231821283_InitialModel.Designer.cs">
+      <DependentUpon>201709231821283_InitialModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709141258067_add homeEvents table.cs" />
-    <Compile Include="Migrations\201709141258067_add homeEvents table.Designer.cs">
-      <DependentUpon>201709141258067_add homeEvents table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709150904080_new m.cs" />
-    <Compile Include="Migrations\201709150904080_new m.Designer.cs">
-      <DependentUpon>201709150904080_new m.cs</DependentUpon>
+    <Compile Include="Migrations\201709231903025_AddHomeEvent.cs" />
+    <Compile Include="Migrations\201709231903025_AddHomeEvent.Designer.cs">
+      <DependentUpon>201709231903025_AddHomeEvent.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EventCategory.cs" />
-    <Compile Include="Models\HomeActivityPropositionController.cs" />
     <Compile Include="Models\HomeEvent.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Movie.cs" />
-    <Compile Include="Models\MusicModel.cs" />
-    <Compile Include="Models\PlayList.cs" />
+    <Compile Include="Models\MusicViewModel.cs" />
+    <Compile Include="Models\Song.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -346,7 +343,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Movie\Index.cshtml" />    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Views\Movie\Index.cshtml" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Movie\_PartialViewMovieProposition.cshtml" />
   </ItemGroup>
@@ -356,6 +354,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709231821283_InitialModel.resx">
+      <DependentUpon>201709231821283_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709231903025_AddHomeEvent.resx">
+      <DependentUpon>201709231903025_AddHomeEvent.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -6,13 +6,13 @@ using System.Web;
 
 namespace PlanUp.Models
 {
-    public class PlayList
+    public class Song
     {
         public string Title { get; set; }
         public string PlayListId { get; set; }
         public string Etag { get; set; }
 
-        public PlayList(string title, string playListId, string etag)
+        public Song(string title, string playListId, string etag)
         {
             Title = title;
             PlayListId = playListId;
