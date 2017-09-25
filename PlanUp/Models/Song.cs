@@ -9,15 +9,15 @@ namespace PlanUp.Models
     public class Song
     {
         public string Title { get; set; }
-        public string PlayListId { get; set; }
+        public string SongId { get; set; }
         public string Etag { get; set; }
         public string Description { get; set; }
 
-        public Song(string title, string playListId, string description)
+        public Song(string title, string songId, string description)
         {
             Title = title;
-            PlayListId = playListId;
-            Etag = GetEtag(playListId);
+            SongId = songId;
+            Etag = GetEtag(songId);
             Description = description;
         }
 

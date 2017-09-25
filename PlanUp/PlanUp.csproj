@@ -256,6 +256,14 @@
     <Compile Include="Migrations\201709231903025_AddHomeEvent.Designer.cs">
       <DependentUpon>201709231903025_AddHomeEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709241933363_SongDbSet.cs" />
+    <Compile Include="Migrations\201709241933363_SongDbSet.Designer.cs">
+      <DependentUpon>201709241933363_SongDbSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709242031142_SongDbSet1.cs" />
+    <Compile Include="Migrations\201709242031142_SongDbSet1.Designer.cs">
+      <DependentUpon>201709242031142_SongDbSet1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EventCategory.cs" />
@@ -263,6 +271,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\SongDbSet.cs" />
     <Compile Include="Models\MusicViewModel.cs" />
     <Compile Include="Models\Song.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -361,6 +370,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709231903025_AddHomeEvent.resx">
       <DependentUpon>201709231903025_AddHomeEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709241933363_SongDbSet.resx">
+      <DependentUpon>201709241933363_SongDbSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709242031142_SongDbSet1.resx">
+      <DependentUpon>201709242031142_SongDbSet1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
