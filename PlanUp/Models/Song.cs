@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using System.Linq;
@@ -6,20 +6,20 @@ using System.Web;
 
 namespace PlanUp.Models
 {
-    public class PlayList
+    public class Song
     {
         public string Title { get; set; }
-        public string PlayListId { get; set; }
+        public string SongId { get; set; }
         public string Etag { get; set; }
+        public string Description { get; set; }
 
-        public PlayList(string title, string playListId, string etag)
+        public Song(string title, string songId, string description)
         {
             Title = title;
-            PlayListId = playListId;
-            Etag = GetEtag(playListId);
+            SongId = songId;
+            Etag = GetEtag(songId);
+            Description = description;
         }
-
-      
 
         private string GetEtag(string etag)
         {
