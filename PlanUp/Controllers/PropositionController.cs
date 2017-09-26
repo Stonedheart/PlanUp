@@ -42,7 +42,7 @@ namespace PlanUp.Controllers
             }
         }
         
-        void SetAll()
+        internal void SetAll()
         {
             for (int i = 0; i < ListOfPropositions.Count; i++)
             {
