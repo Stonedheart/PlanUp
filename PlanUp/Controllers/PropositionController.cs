@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Ajax.Utilities;
 using PlanUp.Controllers.Api;
@@ -27,8 +28,15 @@ namespace PlanUp.Controllers
 
         private bool CheckIfUnique()
         {
-            bool isUnique = ListOfPropositions.DistinctBy(s => s.Title).Count().Equals(ListOfPropositions.Count);
-            return isUnique;
+            try
+            {
+                bool isUnique = ListOfPropositions.DistinctBy(s => s.Title).Count().Equals(ListOfPropositions.Count);
+                return isUnique;
+            }
+            catch (NullReferenceException)
+            {
+                return true;
+            }
         }
         
         void SetOne(int index)
