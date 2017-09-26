@@ -7,13 +7,13 @@ namespace PlanUp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class newm : IMigrationMetadata
+    public sealed partial class AddHomeEvent : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(newm));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddHomeEvent));
         
         string IMigrationMetadata.Id
         {
-            get { return "201709150904080_new m"; }
+            get { return "201709231903025_AddHomeEvent"; }
         }
         
         string IMigrationMetadata.Source

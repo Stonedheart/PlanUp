@@ -19,22 +19,20 @@ namespace PlanUp.Controllers
             // GET: HomeActivity
             public ActionResult Index()
             {
-            var opt = GenerateRandom();
-                if (opt == 0)
-                {
-                    return RedirectToAction("Index", "Music");
-                }
-                if (opt == 1)
+            //var opt = GenerateRandom();
+            //    if (opt == 0)
+            //    {
+            return RedirectToAction("Index", "Music");
+            //    }
+            //    if (opt == 1)
 
-                    return RedirectToAction("Index", "Movie");
+            //return RedirectToAction("Index", "Movie");
 
-                if (opt == 2)
+            //    if (opt == 2)
                 
-                    return RedirectToAction("Index", "HomeEvents");
+            //        return RedirectToAction("Index", "HomeEvents");
 
-                return null;
-
-
+            //    return null;
             }
        }
 }
