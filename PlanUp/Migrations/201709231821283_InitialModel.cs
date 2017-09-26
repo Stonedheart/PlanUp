@@ -3,7 +3,7 @@ namespace PlanUp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialMigrations : DbMigration
+    public partial class InitialModel : DbMigration
     {
         public override void Up()
         {

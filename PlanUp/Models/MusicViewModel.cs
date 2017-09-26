@@ -5,13 +5,13 @@ using System.Web;
 
 namespace PlanUp.Models
 {
-    public class MusicModel
+    public class MusicViewModel
     {
 //        public List<string> Videos { get; set; }
 //        public List<string> Channels { get; set; }
-        public List<PlayList> Playlists { get; set; }
+        public List<Song> Playlists { get; set; }
 
-        public MusicModel(List<PlayList> Playlists)
+        public MusicViewModel(List<Song> Playlists)
         {
             this.Playlists = Playlists;
         }
