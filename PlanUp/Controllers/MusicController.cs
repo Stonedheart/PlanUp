@@ -26,12 +26,7 @@ namespace PlanUp.Controllers
             
         }
 
-        //private string getQuery()
-        //{
-        //    return Request["genre"];
-        //}
         
-        // GET: Music
         public async Task<ActionResult> Index()
         {
             try
