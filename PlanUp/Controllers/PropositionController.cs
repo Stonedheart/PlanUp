@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Ajax.Utilities;
 using PlanUp.Controllers.Api;
 using PlanUp.Converters;
 using PlanUp.Models;
@@ -23,10 +25,21 @@ namespace PlanUp.Controllers
             SetAll();
         }
 
+        private bool CheckIfUnique()
+        {
+            bool isUnique = ListOfPropositions.DistinctBy(s => s.Title).Count().Equals(ListOfPropositions.Count);
+            return isUnique;
+        }
+        
         void SetOne(int index)
         {
-            _converter = new MovieConverter(apiController.GetNextMovie());
+            var movie = apiController.GetNextMovie();
+            _converter = new MovieConverter(movie);
             if (ListOfPropositions.Count > index) ListOfPropositions[index] = _converter.Convert();
+            if (!CheckIfUnique())
+            {
+                SetOne(index);
+            }
         }
         
         void SetAll()
