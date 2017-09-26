@@ -12,9 +12,8 @@ namespace PlanUp.Controllers
 
         private static int GenerateRandom()
         {
-            var random = new Random();
-            var ans = random.Next(0, 2);
-            return ans;
+            var randomNumber = new Random();
+            return randomNumber.Next(0, 2);
         }
             // GET: HomeActivity
             public ActionResult Index()
@@ -30,8 +29,7 @@ namespace PlanUp.Controllers
                         return RedirectToAction("Index", "HomeEvents");
                 }
 
-                return null;
-
+                return View("Error");
 
             }
        }

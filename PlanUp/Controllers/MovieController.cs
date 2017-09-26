@@ -15,23 +15,13 @@ namespace PlanUp.Controllers
 {
     public class MovieController : Controller
     {
-        private ApiMovieController _movieController = new ApiMovieController();
-        private MovieConverter _movieConverter;
+        private PropositionController _propositionController = new PropositionController();
 
         public ActionResult Index()
         {
-            var movieArray = new Movie[3];
-                
-            for (var i = 0; i < movieArray.Length; i++)
-            {
-                var databaseMovie = _movieController.GetNextMovie();
-                _movieConverter = new MovieConverter(databaseMovie);
-                movieArray[i] = _movieConverter.Convert();
+            var propArray = _propositionController.ListOfPropositions;
 
-            }
-            
-            return View(movieArray);
+            return View(propArray);
         }
-       
     }
 }
