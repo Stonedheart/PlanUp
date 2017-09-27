@@ -20,8 +20,9 @@ namespace PlanUp.Controllers
         public ActionResult Index()
         {
             var propArray = _propositionController.ListOfPropositions;
+            IEnumerable<Movie> newArray = propArray.OfType<Movie>().ToList();
 
-            return View(propArray);
+            return View(newArray);
         }
     }
 }
