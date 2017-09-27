@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
 using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
+using PlanUp.Converters;
 using PlanUp.Models;
 
 
@@ -13,54 +10,49 @@ namespace PlanUp.Controllers
 {
     public class MusicSetupController
     {
-        private string _genre { get; set; }
+        private string Genre { get; set; }
+        private YouTubeService YoutubeService { get; set; }
+        private const string ApiKey = "AIzaSyDkMyIyaZSKaBdaKhbdCt1YSPxGG2ewoII";
+        private readonly MusicConverter _musicConverter;
+        private static Random _random;
+        private const int Seed = 3;
+        private const int SongsQuantity = 50;
 
         public MusicSetupController(string genre="")
         {
             if (genre == "")
                 genre = ChooseGenre();
-            _genre = genre;
-
+            Genre = genre;
+            _musicConverter = new MusicConverter();
         }
-
-        private YouTubeService _youtubeService { get; set; }
-        private string _apiKey = "AIzaSyDkMyIyaZSKaBdaKhbdCt1YSPxGG2ewoII";
-        private readonly MusicConverter musicConverter = new MusicConverter();
 
         public void SetConnection()
         {
-            _youtubeService = new YouTubeService(new BaseClientService.Initializer()
+            YoutubeService = new YouTubeService(new BaseClientService.Initializer()
             {
-                ApiKey = _apiKey,
+                ApiKey = ApiKey,
                 ApplicationName = this.GetType().ToString()
             });
-        }
-
-        
-
-        public object GetPropostition()
-        {
-            throw new NotImplementedException();
         }
 
         public async Task<Song[]> RunAsync()
         {
             SetConnection();
-            var searchListRequest = _youtubeService.Search.List("snippet");
-            searchListRequest.Q = _genre; // Replace with your search term.
-            searchListRequest.MaxResults = 3;
-            // Call the search.list method to retrieve results matching the specified query term.
+            var searchListRequest = YoutubeService.Search.List("snippet");
+            searchListRequest.Q = Genre; 
+            searchListRequest.MaxResults = SongsQuantity;
             var searchListResponse = await searchListRequest.ExecuteAsync();
-            return musicConverter.Convert(searchListResponse);
+            return _musicConverter.Convert(searchListResponse);
         }
 
 
         private static string ChooseGenre()
         {
-            var MusicGenres = MusicViewModel.GetGenreList();
-            Random rnd = new Random();
-            int index = rnd.Next(MusicGenres.Count);
-            return MusicGenres[index];
+            var musicGenres = MusicViewModel.GetGenreList();
+            if (_random == null)
+                _random = new Random(Seed);
+            var index = _random.Next(musicGenres.Count);
+            return musicGenres[index];
         }
     }
 }
