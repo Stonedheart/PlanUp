@@ -1,28 +1,56 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using Google.Apis.YouTube.v3.Data;
 using PlanUp.Models;
 
-namespace PlanUp.Controllers
+namespace PlanUp.Converters
 {
-    class MusicConverter
+    internal class MusicConverter
     {
+        private static Random _random;
+        private const int SongsQuantity = 50;
+        private bool _isSongInList;
+
         public Song[] Convert(SearchListResponse searchListResponse)
         {
-            Song[] songs = new Song[3];
-
-            // Add each result to the appropriate list, and then display the lists of
-            // matching videos, channels, and playlists.
-            var index = 0;
-            foreach (var searchResult in searchListResponse.Items)
+            var songs = new Song[3];
+            for(var i=0; i<songs.Length; i++)
             {
-                
-                var song = new Song(searchResult.Snippet.Title,
-                    searchResult.Id.VideoId,
-                    searchResult.Snippet.Description);
-                songs[index] = song;
-                index++;
+                var searchResult = searchListResponse
+                    .Items[GetRandomIndex(SongsQuantity)];
+                var title = searchResult.Snippet.Title;
+                CheckTitleInSongList(songs, title);
+                if (_isSongInList)
+                    continue;
+                songs[i] = new Song(title, searchResult.Id.VideoId,
+                searchResult.Snippet.Description);
             }
             return songs;
+        }
+
+        private void CheckTitleInSongList(Song[]songs, string title)
+        {
+            foreach (var song in songs)
+            {
+                if (song != null)
+                {
+                    if (song.Title == title)
+                        _isSongInList = true;
+                    else
+                    {
+                        _isSongInList = false;
+                    }
+                }
+            }
+            
+        }
+
+        private static int GetRandomIndex(int count)
+        {
+            if (_random == null)
+                _random = new Random(); 
+            return _random.Next(count);
         }
     }
 }
