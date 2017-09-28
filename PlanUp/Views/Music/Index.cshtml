@@ -4,28 +4,17 @@
     ViewBag.Title = "Music";
 }
 
-<h2>Music</h2>
-
-<table class="table">
-
-    @if (Model != null)
-    {
-        foreach (var item in Model)
+@if (Model != null)
+{
+    <div class="container">
+        @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @item.Title
-                    <iframe width="420" height="315"
-                            src="@item.Etag"></iframe>
-                </td>
-                <td>
-                    @item.Description
-                </td>
-            </tr>
+        <div class="col-md-4">
+            <iframe width="380" height="315" src="@item.Etag"></iframe>
+        </div>
         }
-    }
-</table>
-
+    </div>
+}
 <input type="button" value="Get Next Propositions"
        onclick="GeneratePropositionInput()" />
 <div id="genrePreferenceForm" style="margin-top: 2px;">
@@ -34,13 +23,11 @@
     </a>
     <input type="button" class="btn btn-info btn-sm" value="I know what i want"
            onclick="GenerateFormProposition()" />
-
     <form action="/Music/Index" id="genreForm" style="display: inline;">
         <input type="text" name="genre" />
         <input type="Submit" value="Next" />
     </form>
 </div>
-
 <script>
     document.getElementById("genrePreferenceForm").style.display = "none";
     document.getElementById("genreForm").style.display = "none";
@@ -53,3 +40,5 @@
         document.getElementById("genreForm").style.display = "block";
     }
 </script>
+
+<h2>Music</h2>
