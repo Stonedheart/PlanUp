@@ -6,22 +6,10 @@ using System.Web;
 
 namespace PlanUp.Models
 {
-    public class Song
+    public class Song : AbstractYouTubeVideoProposition
     {
-        public string Title { get; set; }
-        public string Etag { get; set; }
-        public string Description { get; set; }
-
-        public Song(string title, string songId, string description)
+        public Song(string title, string etag, string description) : base(title, etag, description)
         {
-            Title = title;
-            Etag = GetEtag(songId);
-            Description = description;
-        }
-
-        private string GetEtag(string etag)
-        {
-            return "https://www.youtube.com/embed/"+etag + "?controls=0";
         }
     }
 }
