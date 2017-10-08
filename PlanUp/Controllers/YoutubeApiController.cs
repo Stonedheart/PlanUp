@@ -12,6 +12,16 @@ namespace PlanUp.Controllers
     public class YoutubeApiController : ApiController
     {
 
+        public void SetConnection(string apiKey = "AIzaSyDkMyIyaZSKaBdaKhbdCt1YSPxGG2ewoII")
+        {
+            YouTubeService youtubeService = new YouTubeService(new BaseClientService.Initializer()
+            {
+                ApiKey = apiKey,
+                ApplicationName = this.GetType().ToString()
+            });
+        }
+
+
         // GET api/<controller>
         public IEnumerable<string> Get()
         {
