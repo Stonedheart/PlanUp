@@ -2,15 +2,20 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron" class="text_params">
-    <h1>PlanUp</h1>
+<div class="jumbotron" class="text_params" style="text-align: center ">
+    <h1> PlanUp</h1>
     <p class="lead">Choose, if you want to Stay Home or Go Outside</p>
-
-    <a href="/HomeActivity/Index" class="btn btn-success btn-lg">
-        Stay Home
-    </a>
-
-    <a href="/OutsideActivity/Index" class="btn btn-info btn-lg">
-        Go Outside
-    </a>
+    
+    <div class="container">
+        <div class="col-md-6">
+            <a href="/HomeActivity/Index" class="btn btn-success btn-lg">
+                <img src="~/Content/homeicon.png"/>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a href="/OutsideActivity/Index" class="btn btn-info btn-lg">
+                <img src="~/Content/outsideicon.png" />
+            </a>
+        </div>
+    </div>
 </div>
