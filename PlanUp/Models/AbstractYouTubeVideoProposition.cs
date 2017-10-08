@@ -6,10 +6,10 @@
         public string Etag { get; }
         public string Description { get; }
 
-        public AbstractYouTubeVideoProposition(string title, string Id, string description)
+        public AbstractYouTubeVideoProposition(string title, string id, string description)
         {
             Title = title;
-            Etag = GetEtag(Id);
+            Etag = GetEtag(id);
             Description = description;
         }
 
