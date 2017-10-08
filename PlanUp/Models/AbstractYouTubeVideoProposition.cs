@@ -13,7 +13,7 @@
             Description = description;
         }
 
-        private string GetEtag(string etag)
+        protected string GetEtag(string etag)
         {
             return "https://www.youtube.com/embed/" + etag + "?controls=0";
         }
