@@ -7,5 +7,9 @@ namespace PlanUp.Models
 {
     public class AbstractYouTubeVideoProposition
     {
+        public string Title { get; }
+        public string Etag { get; }
+        public string Description { get; }
+
     }
 }
