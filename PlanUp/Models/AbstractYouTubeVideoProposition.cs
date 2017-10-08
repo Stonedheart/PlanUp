@@ -6,16 +6,11 @@
         public string Etag { get; }
         public string Description { get; }
 
-        public AbstractYouTubeVideoProposition(string title, string id, string description)
+        public AbstractYouTubeVideoProposition(string title, string etag, string description)
         {
             Title = title;
-            Etag = GetEtag(id);
+            Etag = "https://www.youtube.com/embed/" + etag + "?controls=0";
             Description = description;
-        }
-
-        protected string GetEtag(string etag)
-        {
-            return "https://www.youtube.com/embed/" + etag + "?controls=0";
         }
     }
 }
