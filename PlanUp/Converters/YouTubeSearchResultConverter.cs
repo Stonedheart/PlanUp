@@ -23,7 +23,6 @@ namespace PlanUp.Converters
                     propositions[i] = factory.Create(YoutubePropositionType.Tutorial);
                 }
             }
-//            return propositions;
         }
 
         private bool CheckIfPropositionInList(string title)
