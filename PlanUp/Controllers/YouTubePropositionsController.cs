@@ -23,5 +23,29 @@ namespace PlanUp.Controllers
             _converter = new YouTubeSearchResultConverter(_factory);
             _apiController = new YoutubeApiController(_converter);
         }
+
+        public async Task<ActionResult> Index()
+        {
+            try
+            {
+                _apiController.SetConnection();
+
+                //NOT COOL - ABSTRACT GENERATING RANDOM HIGHER AND FOR WIDER USAGE
+                Array propositionTypes = Enum.GetValues(typeof(YoutubePropositionType));
+                Random random = new Random();
+                YoutubePropositionType randomPropositionType = (YoutubePropositionType)propositionTypes.GetValue(random.Next(propositionTypes.Length));
+
+
+                var query = randomPropositionType;
+                var model = await _apiController.GetPropositionFromYouTube(query.ToString().ToLower());
+ 
+                return View(model);
+            }
+            catch (AggregateException ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            return Redirect("Index");
+        }
     }
 }
