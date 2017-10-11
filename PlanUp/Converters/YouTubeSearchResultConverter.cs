@@ -7,10 +7,16 @@ namespace PlanUp.Converters
 {
     public class YouTubeSearchResultConverter
     {
-        public AbstractYouTubeVideoProposition[] propositions = new AbstractYouTubeVideoProposition[3];
-        private YouTubePropositionsFactory factory = new YouTubePropositionsFactory();
+        public AbstractYouTubeVideoProposition[] propositions; 
+        private YouTubePropositionsFactory _factory;
         private Random _random;
-        private const int Quantity = 50;
+        private const int Quantity = 50; //NOT COOL - TO CHANGE;
+
+        public YouTubeSearchResultConverter(YouTubePropositionsFactory factory)
+        {
+            _factory = factory;
+            propositions = new AbstractYouTubeVideoProposition[3];
+        }
 
         public void Convert(SearchListResponse searchListResponse)
         {
@@ -20,8 +26,8 @@ namespace PlanUp.Converters
                 var title = searchResult.Snippet.Title;
                 if (!CheckIfPropositionInList(title))
                 {
-                    factory.SearchResult = searchResult;
-                    propositions[i] = factory.Create(YoutubePropositionType.Tutorial);
+                    _factory.SearchResult = searchResult;
+                    propositions[i] = _factory.Create(YoutubePropositionType.Tutorial);
                 }
             }
         }
