@@ -1,7 +1,8 @@
 ﻿using Google.Apis.YouTube.v3.Data;
+using PlanUp.Models;
 using PlanUp.Models.YouTubePropositions;
 
-namespace PlanUp.Models
+namespace PlanUp.Factories
 {
     public class YouTubePropositionsFactory
     {
