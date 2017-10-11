@@ -12,7 +12,12 @@ namespace PlanUp.Controllers
     public class YoutubeApiController : Controller
     {
         private YouTubeService _youTubeService;
-        private readonly YouTubeSearchResultConverter _youTubeSearchResultConverter = new YouTubeSearchResultConverter();
+        private readonly YouTubeSearchResultConverter _youTubeSearchResultConverter;
+
+        public YoutubeApiController(YouTubeSearchResultConverter youTubeSearchResultConverter)
+        {
+            _youTubeSearchResultConverter = youTubeSearchResultConverter;
+        }
 
 
         public void SetConnection(string apiKey = "AIzaSyDkMyIyaZSKaBdaKhbdCt1YSPxGG2ewoII")
