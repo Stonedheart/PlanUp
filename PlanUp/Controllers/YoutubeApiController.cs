@@ -39,26 +39,5 @@ namespace PlanUp.Controllers
             _youTubeSearchResultConverter.Convert(searchListResponse);
             return _youTubeSearchResultConverter.propositions;
         }
-
-        public async Task<ActionResult> Index()
-        {
-            try
-            {
-                SetConnection();
-                var query = YoutubePropositionType.Tutorial;
-                var result = await GetPropositionFromYouTube(query.ToString());
-                var model = new Tutorial[3];
-                for (var i = 0; i < model.Length; i++)
-                {
-                    model[i] = (Tutorial) result[i];
-                }
-                return View(model);
-            }
-            catch (AggregateException ex)
-            {
-                Console.WriteLine("Error: " + ex.Message);
-            }
-            return Redirect("Index");
-        }
     }
 }
