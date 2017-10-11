@@ -5,6 +5,7 @@ using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
 using PlanUp.Converters;
 using PlanUp.Models;
+using PlanUp.Models.YouTubePropositions;
 
 namespace PlanUp.Controllers
 {

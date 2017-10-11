@@ -1,6 +1,7 @@
 ﻿using System;
 using Google.Apis.YouTube.v3.Data;
 using PlanUp.Models;
+using PlanUp.Models.YouTubePropositions;
 
 namespace PlanUp.Converters
 {

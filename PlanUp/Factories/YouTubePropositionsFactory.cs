@@ -1,4 +1,5 @@
 ﻿using Google.Apis.YouTube.v3.Data;
+using PlanUp.Models.YouTubePropositions;
 
 namespace PlanUp.Models
 {
