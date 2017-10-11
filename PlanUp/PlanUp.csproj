@@ -277,7 +277,7 @@
     <Compile Include="Models\MusicViewModel.cs" />
     <Compile Include="Models\Song.cs" />
     <Compile Include="Models\Tutorial.cs" />
-    <Compile Include="Models\YouTubePropositionsFactory.cs" />
+    <Compile Include="Factories\YouTubePropositionsFactory.cs" />
     <Compile Include="Models\YoutubePropositionType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
