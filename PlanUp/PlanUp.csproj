@@ -249,6 +249,7 @@
     <Compile Include="Controllers\MusicController.cs" />
     <Compile Include="Controllers\MusicSetupController.cs" />
     <Compile Include="Controllers\YoutubeApiController.cs" />
+    <Compile Include="Controllers\YouTubePropositionsController.cs" />
     <Compile Include="Converters\MusicConverter.cs" />
     <Compile Include="Converters\YouTubeSearchResultConverter.cs" />
     <Compile Include="Global.asax.cs">
@@ -373,6 +374,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\HomeActivityProposition\" />
+    <Folder Include="Views\YouTubePropositions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
