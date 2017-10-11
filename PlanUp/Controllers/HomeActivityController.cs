@@ -13,7 +13,7 @@ namespace PlanUp.Controllers
         private static int GenerateRandom()
         {
             var random = new Random();
-            var ans = random.Next(0, 3);
+            var ans = random.Next(0, 4);
             return ans;
         }
             // GET: HomeActivity
@@ -31,6 +31,9 @@ namespace PlanUp.Controllers
                 if (opt == 2)
                 
                     return RedirectToAction("Index", "HomeEvents");
+                if (opt == 3)
+
+                    return RedirectToAction("Index", "YouTubePropositions");
 
                 return null;
 
