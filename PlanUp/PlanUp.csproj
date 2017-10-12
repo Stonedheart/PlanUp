@@ -255,6 +255,18 @@
     <Compile Include="Migrations\201709150904080_new m.Designer.cs">
       <DependentUpon>201709150904080_new m.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710091012396_AddRejectedPropositions.cs" />
+    <Compile Include="Migrations\201710091012396_AddRejectedPropositions.designer.cs">
+      <DependentUpon>201710091012396_AddRejectedPropositions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710120800584_modifyRejectedProposition.cs" />
+    <Compile Include="Migrations\201710120800584_modifyRejectedProposition.designer.cs">
+      <DependentUpon>201710120800584_modifyRejectedProposition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710121048025_modifyRejectedPropTypeToTitle.cs" />
+    <Compile Include="Migrations\201710121048025_modifyRejectedPropTypeToTitle.designer.cs">
+      <DependentUpon>201710121048025_modifyRejectedPropTypeToTitle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EventCategory.cs" />
@@ -269,6 +281,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-PlanUp-20170802100753.mdf" />
+    <Content Include="App_Data\aspnet-PlanUp-20170802100753_log.ldf">
+      <DependentUpon>aspnet-PlanUp-20170802100753.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -351,11 +367,21 @@
     <Content Include="Views\Movie\_PartialViewMovieProposition.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\HomeActivityProposition\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201710091012396_AddRejectedPropositions.resx">
+      <DependentUpon>201710091012396_AddRejectedPropositions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710120800584_modifyRejectedProposition.resx">
+      <DependentUpon>201710120800584_modifyRejectedProposition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710121048025_modifyRejectedPropTypeToTitle.resx">
+      <DependentUpon>201710121048025_modifyRejectedPropTypeToTitle.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
