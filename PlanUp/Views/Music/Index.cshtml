@@ -4,6 +4,31 @@
     ViewBag.Title = "Music";
 }
 
+<script src="/Scripts/jquery-3.1.1.js"></script>
+<script src="@Url.Content("~/Scripts/json2.min.js")" type="text/javascript"></script>
+<script type="text/javascript">
+
+    $(function () {
+        $(".Next").click(function (e) {            
+            var defaultValue = 'def';
+            var myData = [{ Title: '@Model[0].Title', Description: defaultValue, Etag: '@Model[0].Etag' },
+                { Title: '@Model[1].Title', Description: defaultValue, Etag: '@Model[1].Etag' },
+                { Title: '@Model[2].Title', Description: defaultValue, Etag: '@Model[2].Etag' }];            
+            $.ajax({
+                url: "@Url.Action("SaveToDatabase", "Music")",
+                type: "POST",
+                dataType: "json",
+                contentType: 'application/json',
+                data: JSON.stringify(myData),
+                success: function () {
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                }
+            });
+        });
+    })
+</script>
+
 @if (Model != null)
 {
     <div class="container" style="margin-top: 100px;">
