@@ -10,7 +10,7 @@
         @foreach (var item in Model)
         {
             <div class="col-md-4">
-                <iframe width="380" height="315" src="@item.Etag"></iframe>
+                <iframe width="380" height="315" src="@Html.ValueFor(i => item.Etag)"></iframe>
                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#descriptionModal">
                     Description
                 </button>
@@ -19,10 +19,10 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">@item.Title;</h4>
+                                <h4 class="modal-title">@Html.ValueFor(i => item.Title);</h4>
                             </div>
                             <div class="modal-body">
-                                <p>@item.Description;</p>
+                                <p>@Html.ValueFor(i => item.Description);</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -30,15 +30,14 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         }
     </div>
 }
 
-<input type="button" value="Get Next Propositions"
+<input type="button" class="Next" value="Get Next Propositions"
        onclick="GeneratePropositionInput()" />
+
 <div id="genrePreferenceForm" style="margin-top: 2px;">
     <a href="/Music/Index" class="btn btn-success btn-sm">Surprise me</a>
     <input type="button" class="btn btn-info btn-sm" value="I know what i want"
