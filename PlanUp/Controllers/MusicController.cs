@@ -5,11 +5,19 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using PlanUp.Models;
 
 namespace PlanUp.Controllers
 {
     public class MusicController : Controller
     {
+        ApplicationDbContext _context;
+
+        public MusicController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
         public async Task<ActionResult> Index()
         {
             try
@@ -26,5 +34,7 @@ namespace PlanUp.Controllers
             }
             return Redirect("Index");
         }
+
+
     }
 }
