@@ -12,6 +12,8 @@ namespace PlanUp.Models
         public string Etag { get; set; }
         public string Description { get; set; }
 
+        public Song() { }
+
         public Song(string title, string songId, string description)
         {
             Title = title;
