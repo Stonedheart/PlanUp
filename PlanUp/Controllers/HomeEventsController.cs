@@ -17,10 +17,10 @@ namespace PlanUp.Controllers
 
         public ActionResult Index()
         {
-            var rand = new Random();
-            int i = rand.Next(1,4);
+            int dbSize = db.HomeEvents.Count();
+            int randomNumber = HomeActivityController.GenerateRandom(dbSize);
             var model = from m in db.HomeEvents
-                where m.Id.Equals(i)
+                where m.Id.Equals(randomNumber)
                         select m;
             return View(model);
         }
