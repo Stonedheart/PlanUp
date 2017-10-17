@@ -31,10 +31,10 @@ namespace PlanUp.Controllers
         }
 
 
-        public async Task<AbstractYouTubeVideoProposition[]> GetPropositionFromYouTube(string q, int maxResults = 50)
+        public async Task<AbstractYouTubeVideoProposition[]> GetPropositionFromYouTube(string query, int maxResults = 50)
         {
             var searchListRequest = _youTubeService.Search.List("snippet");
-            searchListRequest.Q = q;
+            searchListRequest.Q = query;
             searchListRequest.MaxResults = maxResults;
             var searchListResponse = await searchListRequest.ExecuteAsync();
             _youTubeSearchResultConverter.Convert(searchListResponse);
