@@ -13,13 +13,7 @@ namespace PlanUp.Controllers
     {
         private const string ApiKey = "AIzaSyDkMyIyaZSKaBdaKhbdCt1YSPxGG2ewoII";
         private YouTubeService _youTubeService;
-        private readonly YouTubeSearchResultConverter _youTubeSearchResultConverter;
-
-        public YoutubeApiController(YouTubeSearchResultConverter youTubeSearchResultConverter)
-        {
-            _youTubeSearchResultConverter = youTubeSearchResultConverter;
-        }
-
+        private readonly YouTubeSearchResultConverter _youTubeSearchResultConverter = new YouTubeSearchResultConverter();
 
         public void SetConnection()
         {
