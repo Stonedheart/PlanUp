@@ -27,12 +27,12 @@ namespace PlanUp.Controllers
         internal static Movie[] Converter()
         {
             Movie[] movieArray = new Movie[3];
-            var randomNumber = HomeActivityController.GenerateRandom(MovieList.Count);
+            var random = new Random();
 
 
             for (int i = 0; i < 3; i++)
             {
-                var slotMovie = MovieList[randomNumber];
+                var slotMovie = MovieList[random.Next(MovieList.Count)];
                 Movie movie;
                 try
                 {

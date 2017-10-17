@@ -14,6 +14,8 @@ namespace PlanUp.Controllers
         private YouTubeService YoutubeService { get; set; }
         private const string ApiKey = "AIzaSyDkMyIyaZSKaBdaKhbdCt1YSPxGG2ewoII";
         private readonly MusicConverter _musicConverter;
+        private static Random _random;
+        private const int Seed = 3;
         private const int SongsQuantity = 50;
 
         public MusicSetupController(string genre="")
@@ -47,8 +49,10 @@ namespace PlanUp.Controllers
         private static string ChooseGenre()
         {
             var musicGenres = MusicViewModel.GetGenreList();
-            var randomNumber = HomeActivityController.GenerateRandom(musicGenres.Count);
-            return musicGenres[randomNumber];
+            if (_random == null)
+                _random = new Random(Seed);
+            var index = _random.Next(musicGenres.Count);
+            return musicGenres[index];
         }
     }
 }

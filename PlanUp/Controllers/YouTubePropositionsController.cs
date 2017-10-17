@@ -30,9 +30,10 @@ namespace PlanUp.Controllers
             {
                 _apiController.SetConnection();
 
+                //NOT COOL - ABSTRACT GENERATING RANDOM HIGHER AND FOR WIDER USAGE
                 Array propositionTypes = Enum.GetValues(typeof(YoutubePropositionType));
-                var randomNumber = HomeActivityController.GenerateRandom(propositionTypes.Length);
-                YoutubePropositionType randomPropositionType = (YoutubePropositionType)propositionTypes.GetValue(randomNumber);
+                Random random = new Random();
+                YoutubePropositionType randomPropositionType = (YoutubePropositionType)propositionTypes.GetValue(random.Next(propositionTypes.Length));
 
 
                 var query = randomPropositionType;
