@@ -11,6 +11,7 @@ namespace PlanUp.Controllers
 {
     public class YoutubeApiController : Controller
     {
+        private const string ApiKey = "AIzaSyDkMyIyaZSKaBdaKhbdCt1YSPxGG2ewoII";
         private YouTubeService _youTubeService;
         private readonly YouTubeSearchResultConverter _youTubeSearchResultConverter;
 
@@ -20,11 +21,11 @@ namespace PlanUp.Controllers
         }
 
 
-        public void SetConnection(string apiKey = "AIzaSyDkMyIyaZSKaBdaKhbdCt1YSPxGG2ewoII")
+        public void SetConnection()
         {
             _youTubeService = new YouTubeService(new BaseClientService.Initializer()
             {
-                ApiKey = apiKey,
+                ApiKey = ApiKey,
                 ApplicationName = this.GetType().ToString()
             });
         }
