@@ -2,20 +2,32 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron" class="text_params" style="text-align: center ">
-    <h1> PlanUp</h1>
-    <p class="lead">Choose, if you want to Stay Home or Go Outside</p>
-    
-    <div class="container">
-        <div class="col-md-6">
-            <a href="/HomeActivity/Index" class="btn btn-success btn-lg">
-                <img src="~/Content/homeicon.png"/>
-            </a>
-        </div>
-        <div class="col-md-6">
-            <a href="/OutsideActivity/Index" class="btn btn-info btn-lg">
-                <img src="~/Content/outsideicon.png" />
-            </a>
+    <div class="jumbotron" class="text_params" style="text-align: center ">
+        <h1> PlanUp</h1>
+        <p class="lead">Choose, if you want to Stay Home or Go Outside</p>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="/HomeActivity/Index" class="btn btn-success btn-lg">
+                        <img src="~/Content/homeicon.png" />
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="/OutsideActivity/Index" class="btn btn-info btn-lg">
+                        <img src="~/Content/outsideicon.png" />
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 col-md-offset-1">
+                    <input type="button" id="lazy" />
+                </div>
+                <div class="col-md-6">
+                    <input type="button" id="active" />
+                </div>
+
+            </div>
         </div>
     </div>
-</div>
+
