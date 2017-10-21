@@ -47,8 +47,7 @@ namespace PlanUp.Controllers
                 };
                 _context.RejectedPropositions.Add(rejected);
                 _context.SaveChanges();
-            }
-                        
+            }                        
         }
     }
 }
