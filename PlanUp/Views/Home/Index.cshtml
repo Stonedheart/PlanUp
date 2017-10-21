@@ -2,6 +2,27 @@
     ViewBag.Title = "Home Page";
 }
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+
+<script>
+    $(function () {
+        $("#lazy").click(function (e) {
+            var state = "lazy";
+            $.ajax({
+                url: "@Url.Action("SetUserState", "User")",
+                type: "POST",
+                dataType: "string",
+                data: state,
+                success: function () {
+                },
+                error: function (textStatus) {
+                }
+            });
+        });
+    }
+</script>
+
     <div class="jumbotron" class="text_params" style="text-align: center ">
         <h1> PlanUp</h1>
         <p class="lead">Choose, if you want to Stay Home or Go Outside</p>
