@@ -22,3 +22,12 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#genrePreferenceForm,
+#genreForm {
+    display: none;
+}
+
+.Next {
+    margin-top: 1em;
+}
