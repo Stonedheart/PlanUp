@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using PlanUp.RejectedPropositionModel;
 
 namespace PlanUp.Models
 {
@@ -21,6 +22,7 @@ namespace PlanUp.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<HomeEvent> HomeEvents { get; set; }
+        public DbSet<RejectedProposition> RejectedPropositions { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
