@@ -7,20 +7,21 @@
 
 <script>
     $(function () {
-        $("#lazy").click(function (e) {
-            var state = "lazy";
+        $("#lazy").click(function (e) {            
+            var dataToSend = JSON.stringify({ state: "lazy" });
             $.ajax({
-                url: "@Url.Action("SetUserState", "User")",
+                url: "@Url.Action("SetUserState", "Home")",
                 type: "POST",
-                dataType: "string",
-                data: state,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: dataToSend,
                 success: function () {
                 },
                 error: function (textStatus) {
                 }
             });
         });
-    }
+    })
 </script>
 
     <div class="jumbotron" class="text_params" style="text-align: center ">
@@ -42,10 +43,10 @@
             </div>
             <div class="row">
                 <div class="col-md-5 col-md-offset-1">
-                    <input type="button" id="lazy" />
+                    <input type="button" id="lazy" value="LAZY" />
                 </div>
                 <div class="col-md-6">
-                    <input type="button" id="active" />
+                    <input type="button" id="active" value="ACTIVE" />
                 </div>
 
             </div>
