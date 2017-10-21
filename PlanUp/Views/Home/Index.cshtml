@@ -7,8 +7,8 @@
 
 <script>
     $(function () {
-        $("#lazy").click(function (e) {            
-            var dataToSend = JSON.stringify({ state: "lazy" });
+        $(".setState").click(function (e) {
+            var dataToSend = JSON.stringify({ state: this.id});
             $.ajax({
                 url: "@Url.Action("SetUserState", "Home")",
                 type: "POST",
@@ -43,12 +43,11 @@
             </div>
             <div class="row">
                 <div class="col-md-5 col-md-offset-1">
-                    <input type="button" id="lazy" value="LAZY" />
+                    <input type="button" class="setState" id="lazy" value="LAZY" />
                 </div>
                 <div class="col-md-6">
-                    <input type="button" id="active" value="ACTIVE" />
+                    <input type="button" class="setState" id="active" value="ACTIVE" />
                 </div>
-
             </div>
         </div>
     </div>
