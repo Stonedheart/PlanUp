@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PlanUp.Models;
 
 namespace PlanUp.Controllers
 {
@@ -23,8 +24,15 @@ namespace PlanUp.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-
             return View();
+        }
+
+        [HttpPost]
+        public void SetUserState(string state)
+        {
+            if (state == "lazy")
+                UserRole.IsLazy = true;
+            UserRole.IsLazy = false;
         }
     }
 }
